@@ -14,7 +14,7 @@
     
     <div class="input">
         <input type="text" id="carModel" placeholder="Введите модель машины">
-        <button onclick="searchCar()">Найти</button>
+        <button class="about-btn" onclick="searchCar()">Найти</button>
         <button class="about-btn" onclick="showDeveloper()">О разработчике</button>
     </div>
     
