@@ -7,10 +7,8 @@ function searchCar() {
         return;
     }
     
-    // Показываем индикатор загрузки
     resultsDiv.innerHTML = '<p>Поиск...</p>';
     
-    // Используем Fetch API для отправки запроса к PHP
     fetch(`search.php?search=${encodeURIComponent(searchText)}`)
         .then(response => {
             if (!response.ok) {
@@ -25,6 +23,24 @@ function searchCar() {
             console.error('Ошибка:', error);
             resultsDiv.innerHTML = '<p>Произошла ошибка при поиске</p>';
         });
+}
+
+// Функция для показа информации о разработчике
+function showDeveloper() {
+    const resultsDiv = document.getElementById('results');
+    
+    resultsDiv.innerHTML = `
+        <div class="results">
+            <h3>Разработчик сайта</h3>
+            <img src="images/developerr.jpg" alt="Разработчик" width="300">
+            <p><strong>Имя:</strong> Низамова Лиана</p>
+            <p><strong>Должность:</strong> Веб-разработчик</p>
+            <p><strong>Опыт:</strong> 3 года в веб-разработке</p>
+            <p><strong>Описание:</strong> Создатель этой базы данных автомобилей ВАЗ. 
+            Увлечен классическими автомобилями и веб-технологиями. 
+            Цель проекта - сохранить историю отечественного автопрома.</p>
+        </div>
+    `;
 }
 
 document.getElementById('carModel').addEventListener('keypress', function(e) {
